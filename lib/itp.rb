@@ -14,4 +14,8 @@ class Itp
     link = ipfs_client.add(file_name)
     link.hashcode
   end
+
+  def self.view_content(hash_code)
+    ipfs_client.cat(hash_code)
+  end
 end
