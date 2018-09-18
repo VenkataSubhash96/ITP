@@ -1,11 +1,6 @@
-# require 'itp/version'
 require 'ipfs/client'
 
 class Itp
-  def self.generate_hash
-    puts 'Generated Hash!'
-  end
-
   def self.ipfs_client
     IPFS::Client.default
   end
