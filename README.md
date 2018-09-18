@@ -1,6 +1,6 @@
 # Itp
 
-Itp gem helps you to transfer files from system to system. You can share a file to your colleague very easily. It uses ipfs-ruby gem for seting up ipfs client and contacting ipfs server.
+Itp gem helps you to transfer files from system to system. You can share a file with your friend very easily. It uses ipfs-ruby gem for setting up ipfs client and contacting ipfs server.
 
 ## Installation
 
@@ -22,27 +22,27 @@ Or install it yourself as:
 
 This gem supports only CLI.
 
-To share a file to your colleague, you have to add it to ipfs daemon server. To do that, there should be a ipfs daemon server running. By default, ipfs daemon server runs in the port 5001. This gem expects an ipfs daemon server to be running in the port 5001.
+To share a file with your friend, you have to add it to ipfs daemon server. To do that, there should be an ipfs daemon server running. By default, ipfs daemon server runs on the port 5001. This gem expects an ipfs daemon server to be running on the port 5001.
 
 To run ipfs daemon server, you have to do the following.
 
     $ ipfs daemon
 
-This would start an ipfs daemon server at port 5001.
+This starts an ipfs daemon server on port 5001.
 
-Now, an ipfs daemon server is running at port 5001 and is ready to accept file sharings. Now your job is pretty easy now. You can share any file with your colleague. To share a file, you have to do the following from your console.
+Now, an ipfs daemon server is running on port 5001 and is ready to accept file sharings. Your job is pretty easy now. You can share any file with your friend. To share a file, run the following command from your console.
 
     $ ruby -Ilib ./bin/itp share filename
 
-This would generate a hash which you should be sending to your friend. What your friend must be doing with the hash will be explained later. So, this would internally add your file to ipfs daemon server.
+Above command generates a hash which you should be sending it to your friend. This internally adds your file to ipfs daemon server.
 
-Now, the time has come for your friend to receive that file using the hash generated. To receive the file, type the following command from your console.
+Now, the time has come for your friend to receive that file using the hash generated. To receive the file, run the following command from your console.
 
     $ ruby -Ilib ./bin/itp receive hashcode
 
-This would create a file with name received.txt in the current directory.
+This creates a file with name received.txt in your current directory.
 
-So this way, files are shared among systems.
+This way, files are shared among systems.
 
 ## Development
 
