@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'itp'
+if ARGV[0] == 'share'
+  puts Itp.share_file(ARGV[1])
+elsif ARGV[0] == 'receive'
+  Itp.receive_file(ARGV[1])
+else
+  puts "command not found: #{ARGV[0]}"
+  puts 'Use any one among share/receive'
+end
