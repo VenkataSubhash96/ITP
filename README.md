@@ -26,19 +26,19 @@ To share a file to your colleague, you have to add it to ipfs daemon server. To 
 
 To run ipfs daemon server, you have to do the following.
 
-$ ipfs daemon
+    $ ipfs daemon
 
 This would start an ipfs daemon server at port 5001.
 
 Now, an ipfs daemon server is running at port 5001 and is ready to accept file sharings. Now your job is pretty easy now. You can share any file with your colleague. To share a file, you have to do the following from your console.
 
-$ ruby -Ilib ./bin/itp share filename
+    $ ruby -Ilib ./bin/itp share filename
 
 This would generate a hash which you should be sending to your friend. What your friend must be doing with the hash will be explained later. So, this would internally add your file to ipfs daemon server.
 
 Now, the time has come for your friend to receive that file using the hash generated. To receive the file, type the following command from your console.
 
-$ ruby -Ilib ./bin/itp receive hashcode
+    $ ruby -Ilib ./bin/itp receive hashcode
 
 This would create a file with name received.txt in the current directory.
 
