@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'itp'
-puts Itp.add_file(ARGV[1]) if ARGV[0] == 'share'
-puts Itp.view_content(ARGV[1]) if ARGV[0] == 'receive'
 if ARGV[0] == 'share'
-  Itp.add_file(ARGV[1])
+  puts Itp.share_file(ARGV[1])
 elsif ARGV[0] == 'receive'
-  Itp.view_content(ARGV[1])
+  Itp.receive_file(ARGV[1])
 else
   puts "command not found: #{ARGV[0]}"
   puts 'Use any one among share/receive'
