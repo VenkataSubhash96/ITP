@@ -13,7 +13,11 @@ class Itp
   end
 
   def self.view_content(hash_code)
-    ipfs_client.cat(hash_code)
+    content = ipfs_client.cat(hash_code)
+    File.open('received.txt', 'w') do |output_file|
+      output_file.write(content)
+    end
+    'Received file'
   rescue HTTP::ConnectionError
     "Cannot receive file. IPFS daemon server not running. Run 'ipfs daemon'"
   end
