@@ -1,8 +1,6 @@
 # Itp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/itp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Itp gem helps you to transfer files from system to system. You can share a file to your colleague very easily. It uses ipfs-ruby gem for seting up ipfs client and contacting ipfs server.
 
 ## Installation
 
@@ -22,7 +20,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem supports only CLI.
+
+To share a file to your colleague, you have to add it to ipfs daemon server. To do that, there should be a ipfs daemon server running. By default, ipfs daemon server runs in the port 5001. This gem expects an ipfs daemon server to be running in the port 5001.
+
+To run ipfs daemon server, you have to do the following.
+
+$ ipfs daemon
+
+This would start an ipfs daemon server at port 5001.
+
+Now, an ipfs daemon server is running at port 5001 and is ready to accept file sharings. Now your job is pretty easy now. You can share any file with your colleague. To share a file, you have to do the following from your console.
+
+$ ruby -Ilib ./bin/itp share filename
+
+This would generate a hash which you should be sending to your friend. What your friend must be doing with the hash will be explained later. So, this would internally add your file to ipfs daemon server.
+
+Now, the time has come for your friend to receive that file using the hash generated. To receive the file, type the following command from your console.
+
+$ ruby -Ilib ./bin/itp receive hashcode
+
+This would create a file with name received.txt in the current directory.
+
+So this way, files are shared among systems.
 
 ## Development
 
@@ -32,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/itp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/VenkataSubhash96/itp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
